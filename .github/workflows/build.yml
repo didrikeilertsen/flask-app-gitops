@@ -49,7 +49,6 @@ jobs:
 #        pr_reviewer: "didrikeilertsen"
 #        pr_assignee: "didrikeilertsen"
 
-
 #    -
 #      name: Raise a Pull Request
 #      id: pull-request
