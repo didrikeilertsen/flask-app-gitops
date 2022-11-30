@@ -36,16 +36,10 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: didrikeilertsen/getting-started:test
-
-
-#    -
-#      name: Build the Docker image
-#      id: build
-#      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME  }}/flask-app-gitops
-#    -
-#      name: Raise a Pull Request
-#      id: pull-request
-#      uses: repo-sync/pull-request@v2
-#      with:
-#        destination_branch: master
-#        github_token: ${{ secrets.GH_TOKEN }}
+    -
+      name: Raise a Pull Request
+      id: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: master
+        github_token: ${{ secrets.GH_TOKEN }}
