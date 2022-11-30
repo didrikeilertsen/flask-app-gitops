@@ -43,3 +43,4 @@ jobs:
       with:
         destination_branch: origin/master
         github_token: ${{ secrets.GH_TOKEN }}
+
