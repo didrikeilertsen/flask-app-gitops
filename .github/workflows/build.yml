@@ -23,7 +23,7 @@ jobs:
     -
       name: Build the Docker image
       id: build
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER  }}/flask-app-gitops
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME  }}/flask-app-gitops
     -
       name: Raise a Pull Request
       id: pull-request
