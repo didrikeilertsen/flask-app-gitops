@@ -6,13 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the Docker image
       id: build
       run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER  }}/flask-app-gitops
     - name: Raise a Pull Request
       id: pull-request
-      uses: repo-sync/pull-request@v2
+      uses: repo-sync/pull-request@v3
       with:
         destination_branch: master
         github_token: ${{ secrets.GH_TOKEN }}
