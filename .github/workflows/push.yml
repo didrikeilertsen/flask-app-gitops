@@ -1,7 +1,10 @@
 name: Build, Test, and Push container image
 on:
+  pull_requests:
+    types: closed
+    branches: [ main ]
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
