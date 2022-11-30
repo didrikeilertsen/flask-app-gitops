@@ -36,11 +36,25 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: didrikeilertsen/getting-started:test
+
     -
-      name: Raise a Pull Request
-      id: pull-request
-      uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: origin/master
-        github_token: ${{ secrets.GH_TOKEN }}
+      name: create pull request
+      id: open-pr
+        uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          destination_branch: ${{ github.event.repository.default_branch }}
+          pr_title: "[Automated] Merge ${{ github.ref_name }} into ${{ github.event.repository.default_branch }}"
+          pr_body: "Automated Pull Request"
+          pr_reviewer: "didrikeilertsen"
+          pr_assignee: "didrikeilertsen"
+
+
+#    -
+#      name: Raise a Pull Request
+#      id: pull-request
+#      uses: repo-sync/pull-request@v2
+#      with:
+#        destination_branch: origin/master
+#        github_token: ${{ secrets.GH_TOKEN }}
 
