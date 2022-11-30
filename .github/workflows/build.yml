@@ -40,7 +40,7 @@ jobs:
       name: Raise a Pull Request
       id: pull-request
       uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: master
-        github_token: ${{ secrets.GH_TOKEN }}
+#      with:
+#        destination_branch: master
+#        github_token: ${{ secrets.GH_TOKEN }}
 
