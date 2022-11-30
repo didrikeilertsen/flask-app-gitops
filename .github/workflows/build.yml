@@ -33,7 +33,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: .
-        file: ./ci/flask-app/Dockerfile
+        file: ./Dockerfile
         push: true
         tags: didrikeilertsen/getting-started:test
 

@@ -5,6 +5,6 @@ RUN apk add --no-cache gcc musl-dev linux-headers
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 EXPOSE 5000
-COPY . .
+COPY ci/flask-app .
 RUN python3 app.test.py
 CMD ["flask", "run"]
