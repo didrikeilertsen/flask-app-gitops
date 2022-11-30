@@ -29,11 +29,11 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
     -
-      name: Build and push
+      name: Build and push docker image
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/flask-app-gitops
+        tags: didrikeilertsen/getting-started:test
 
 
 #    -
