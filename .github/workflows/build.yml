@@ -21,22 +21,22 @@ jobs:
 #           test
           
           
-#       -
-#         name: Set up Docker Buildx
-#         uses: docker/setup-buildx-action@v2
-#       -
-#         name: Build and push
-#         uses: docker/build-push-action@v3
-#         with:
-#           context: .
-#           file: flask-app-gitops/ci/flask-app/Dockerfile
-#           push: true
-#           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: flask-app-gitops/ci/flask-app/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
      
-#      -
-#         name: Build the Docker image
-#         id: build
-#         run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER  }}/flask-app-gitops          
+     -
+        name: Build the Docker image
+        id: build
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER  }}/flask-app-gitops          
           
 
 
