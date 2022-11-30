@@ -1,6 +1,6 @@
 name: Build, Test, and Push container image
 on:
-  pull_requests:
+  pull_request:
     types: closed
     branches: [ main ]
   push:
